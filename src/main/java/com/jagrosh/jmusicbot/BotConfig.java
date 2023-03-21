@@ -41,7 +41,7 @@ public class BotConfig
     private Path path = null;
     private String token, prefix, altprefix, helpWord, playlistsFolder,
             successEmoji, warningEmoji, errorEmoji, loadingEmoji, searchingEmoji;
-    private boolean stayInChannel, songInGame, npImages, updatealerts, useEval, dbots;
+    private boolean stayInChannel, songInGame, npImages, updatealerts, useEval, dbots, updateCheck;
     private long owner, maxSeconds, aloneTimeUntilStop;
     private double skipratio;
     private OnlineStatus status;
@@ -95,6 +95,12 @@ public class BotConfig
             skipratio = config.getDouble("skipratio");
             dbots = owner == 113156185389092864L;
             
+            try {
+              updateCheck = config.getBoolean("updatecheck");
+            } catch (ConfigException.Missing e) {
+              updateCheck = true;
+            }
+
             // we may need to write a new config file
             boolean write = false;
 
@@ -331,6 +337,10 @@ public class BotConfig
     public long getAloneTimeUntilStop()
     {
         return aloneTimeUntilStop;
+    }
+
+    public boolean getUpdateCheck() {
+      return updateCheck;
     }
     
     public boolean isTooLong(AudioTrack track)
