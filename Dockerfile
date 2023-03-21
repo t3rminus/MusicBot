@@ -2,7 +2,6 @@ FROM openjdk:slim
 
 RUN mkdir -p /jmb/config
 ADD ./target/JMusicBot-Snapshot-All.jar /jmb/JMusicBot.jar
-ADD ./example.config.txt /jmb/config/config.txt
 
 COPY ./docker-entrypoint.sh /jmb
 
