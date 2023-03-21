@@ -6,9 +6,10 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Maven Build & Docker Push
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "master" ]
   pull_request:
