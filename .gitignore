@@ -8,3 +8,4 @@ nb*.xml
 .classpath
 .project
 .settings
+!example.config.txt
