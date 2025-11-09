@@ -1,4 +1,4 @@
-FROM openjdk:slim
+FROM openjdk:26-ea-slim
 
 RUN mkdir -p /jmb/config
 ADD ./target/JMusicBot-Snapshot-All.jar /jmb/JMusicBot.jar
